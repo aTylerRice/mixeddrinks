@@ -1,0 +1,21 @@
+desc "Fetch Drink info"
+task :fetch_drinks => :environment do
+	require 'nokogiri'
+	require 'open-uri'
+	
+	
+	drink = Drink.new
+	url = "http://www.drinksmixer.com/drinks1r6109.html"
+	page = Nokogiri::HTML(open(url))
+	drink.name = page.css("h1.fn.recipe_title").text
+	drink.save
+	#puts "ingredients" + page.css("span.ingredients span.amount").text
+	for ingredient in page.css("span.ingredient")
+		ingredient = Ingredients.new
+		ingredient.amount = ingredient.css("span.amount").text 
+		ingredient.name = ingredient.css("span.name").text
+		ingredient.save
+	end
+	drink.category = page.css("div.pm a")[0].text
+	drink.directions = page.css("div.RecipeDirections.instructions").text	
+end

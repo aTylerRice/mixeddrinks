@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mixeddrinks</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="nav">
+	<%= link_to "Cocktails", "/category/Cocktails" %>
+	<%= link_to "Shots & Shooters", "/category/Shots & Shooters" %>
+	<%= link_to "Punches", "/category/Punches" %>
+	<%= link_to "Liqueurs", "/category/Liqueurs" %>
+	<%= link_to "Non-Alcoholic", "/category/Non-Alcoholic" %>
+	<%= link_to "Beer & Ale", "/category/Beer & Ale" %>
+	<%= link_to "Coffee & Tea", "/category/Cocktails" %>
+</div>
+<%= yield %>
+
+</body>
+</html>

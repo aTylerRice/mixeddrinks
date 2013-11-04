@@ -1,0 +1,9 @@
+
+<%= paginate @drinks %>
+<ul class="drinks">
+<% @drinks.each do |drink| %>
+  <li><%= link_to drink.name, drink %></li>
+<% end %>
+</ul>
+<%= paginate @drinks %>
+

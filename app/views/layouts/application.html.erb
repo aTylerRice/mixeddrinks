@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mixeddrinks</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+	<a class="brand" href="#">Mixed Drinks and Cocktails</a>
+	<div class="nav-collapse collapse">
+	<ul class="nav">
+		<li><%= link_to "Cocktails", "/category/Cocktails" %></li>
+		<li><%= link_to "Shots & Shooters", "/category/Shots & Shooters" %></li>
+		<li><%= link_to "Punches", "/category/Punches" %></li>
+		<li><%= link_to "Liqueurs", "/category/Liqueurs" %></li>
+		<li><%= link_to "Non-Alcoholic", "/category/Non-Alcoholic" %></li>
+		<li><%= link_to "Beer & Ale", "/category/Beer & Ale" %></li>
+		<li><%= link_to "Coffee & Tea", "/category/Cocktails" %></li>
+	</ul>
+	</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="span4">
+	<div class="well sidebar-nav">
+	<ul class="nav nav-list">
+		<li class="nav-header">Holiday Drinks</li>
+		<li><a href="#">Valentine's Day Drinks</a></li>
+		<li><a href="#">Saint Patrick's Day Drinks</a></li>
+		<li><a href="#">Cinco de Mayo Drinks</a></li>
+		<li><a href="#">Memorial Day & 4th of July Drinks</a></li>
+		<li><a href="#">Halloween Mixed Drinks</a></li>
+		<li><a href="#">Christmas Eggnog & New Year's Eve Drinks</a></li>
+	</ul>
+	</div>
+</div>
+<div class="span8">
+<%= yield %>
+</div>
+</div>
+</div>
+</body>
+</html>

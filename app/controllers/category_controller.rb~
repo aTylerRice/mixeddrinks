@@ -1,0 +1,11 @@
+class CategoryController < ApplicationController
+	
+  # GET /category/:name
+  def show
+    @drinks = Drink.where("category = ?",params[:name]).order("name").page(params[:page]))
+
+    respond_to do |format|
+      format.html # show.html.erb
+    end
+  end
+end
